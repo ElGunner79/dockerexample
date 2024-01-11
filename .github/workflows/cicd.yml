@@ -43,8 +43,8 @@ jobs:
           with:
             context: .
             push: true
-            tags: ${{ secrets.DOCKER_HUB_USERNAME }}/dockerexample: latest
             file: Dockerfile
-            
-        - name: Image digest\
-          un: echo ${{ steps.docker_build.outputs.digest }}
+            tags: ${{ secrets.DOCKER_HUB_USERNAME }}/dockerexample:latest
+        
+        - name: Image digest
+          run: echo ${{ steps.docker_build.outputs.digest }}
